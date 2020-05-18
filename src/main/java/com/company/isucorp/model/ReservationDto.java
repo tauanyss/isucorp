@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReservationDto {
-	
+
+	private Integer reservationId;
 	private Integer	contactId;
 	private String name;
 	private String contactType;
