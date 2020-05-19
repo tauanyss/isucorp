@@ -2,6 +2,8 @@ package com.company.isucorp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,9 +20,14 @@ public class ContactController {
 	@Autowired
 	private ContactService contactService;
 	
-    @PostMapping("/getContact")
+    @GetMapping("/getContact")
     public Contact getContact(@RequestParam String contactName) {
     	return contactService.findContact(contactName);
+    }
+    
+    @DeleteMapping("/delete")
+    public void deleteContact(@RequestParam Integer id) {
+    	contactService.delete(id);
     }
 
 }

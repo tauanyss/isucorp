@@ -35,4 +35,8 @@ public class ReservationService {
 		return reservation;
 	}
 	
+	public void delete(Integer id) {
+		reservationRepository.deleteById(id);
+	}
+	
 }
